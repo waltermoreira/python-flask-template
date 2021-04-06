@@ -32,7 +32,7 @@ RUN mkdir -p function
 RUN touch ./function/__init__.py
 WORKDIR /home/app/function/
 COPY function/requirements.txt	.
-RUN pip install --user -r requirements.txt
+RUN pip install --trusted-host pypi-service.pypi.svc.cluster.local --user -r requirements.txt
 
 WORKDIR /home/app/
 
